@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasteTracker.API", "TasteTracker.API.csproj", "{B4CAADA2-9093-44CA-8BAB-C53654A74ED3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasteTracker.Core", "..\TasteTracker.Core\TasteTracker.Core.csproj", "{11DAF43F-54B2-41A4-9A9A-0F43AEE13BD6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasteTracker.Persistence", "..\TasteTracker.Persistence\TasteTracker.Persistence.csproj", "{BBA5C76F-318F-40A0-9FA0-7897DC546975}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasteTracker.Application", "..\TasteTracker.Application\TasteTracker.Application.csproj", "{577496B6-601C-4258-8751-9A993AF504B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4CAADA2-9093-44CA-8BAB-C53654A74ED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4CAADA2-9093-44CA-8BAB-C53654A74ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4CAADA2-9093-44CA-8BAB-C53654A74ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4CAADA2-9093-44CA-8BAB-C53654A74ED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11DAF43F-54B2-41A4-9A9A-0F43AEE13BD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11DAF43F-54B2-41A4-9A9A-0F43AEE13BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11DAF43F-54B2-41A4-9A9A-0F43AEE13BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11DAF43F-54B2-41A4-9A9A-0F43AEE13BD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBA5C76F-318F-40A0-9FA0-7897DC546975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA5C76F-318F-40A0-9FA0-7897DC546975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBA5C76F-318F-40A0-9FA0-7897DC546975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBA5C76F-318F-40A0-9FA0-7897DC546975}.Release|Any CPU.Build.0 = Release|Any CPU
+		{577496B6-601C-4258-8751-9A993AF504B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{577496B6-601C-4258-8751-9A993AF504B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{577496B6-601C-4258-8751-9A993AF504B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{577496B6-601C-4258-8751-9A993AF504B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D271D372-78B6-40F0-9045-73046FF9E2B0}
+	EndGlobalSection
+EndGlobal

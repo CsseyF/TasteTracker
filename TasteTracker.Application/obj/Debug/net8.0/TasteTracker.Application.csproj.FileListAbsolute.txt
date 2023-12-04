@@ -1,0 +1,15 @@
+C:\Users\casey\source\repos\TasteTracker.Application\bin\Debug\net8.0\TasteTracker.Application.dll
+C:\Users\casey\source\repos\TasteTracker.Application\bin\Debug\net8.0\TasteTracker.Application.deps.json
+C:\Users\casey\source\repos\TasteTracker.Application\bin\Debug\net8.0\TasteTracker.Application.pdb
+C:\Users\casey\source\repos\TasteTracker.Application\bin\Debug\net8.0\TasteTracker.Core.dll
+C:\Users\casey\source\repos\TasteTracker.Application\bin\Debug\net8.0\TasteTracker.Core.pdb
+C:\Users\casey\source\repos\TasteTracker.Application\obj\Debug\net8.0\TasteTracker.Application.csproj.AssemblyReference.cache
+C:\Users\casey\source\repos\TasteTracker.Application\obj\Debug\net8.0\TasteTracker.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\casey\source\repos\TasteTracker.Application\obj\Debug\net8.0\TasteTracker.Application.AssemblyInfoInputs.cache
+C:\Users\casey\source\repos\TasteTracker.Application\obj\Debug\net8.0\TasteTracker.Application.AssemblyInfo.cs
+C:\Users\casey\source\repos\TasteTracker.Application\obj\Debug\net8.0\TasteTracker.Application.csproj.CoreCompileInputs.cache
+C:\Users\casey\source\repos\TasteTracker.Application\obj\Debug\net8.0\TasteTracker.Application.csproj.CopyComplete
+C:\Users\casey\source\repos\TasteTracker.Application\obj\Debug\net8.0\TasteTracker.Application.dll
+C:\Users\casey\source\repos\TasteTracker.Application\obj\Debug\net8.0\refint\TasteTracker.Application.dll
+C:\Users\casey\source\repos\TasteTracker.Application\obj\Debug\net8.0\TasteTracker.Application.pdb
+C:\Users\casey\source\repos\TasteTracker.Application\obj\Debug\net8.0\ref\TasteTracker.Application.dll
