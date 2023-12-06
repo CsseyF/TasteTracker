@@ -5,10 +5,8 @@ using TasteTracker.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -26,13 +24,14 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuerSigningKey = true,
         ValidIssuer = "tasteTrackerJwt",
         ValidAudience = "tasteTrackerJwt",
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("F5209WQN4"))
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("qxa14{e$@./,]cl6{p(r>s`|,<}h4b_:6j4"))
     };
 });
 
+
 Builder.DbContextBuilder(builder.Services);
-Builder.ServiceBuilder(builder.Services);
 Builder.RepositoryBuilder(builder.Services);
+Builder.ServiceBuilder(builder.Services);
 
 var app = builder.Build();
 

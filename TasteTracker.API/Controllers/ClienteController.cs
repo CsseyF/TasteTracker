@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using TasteTracker.Application.Dtos;
 using TasteTracker.Application.Dtos.ClienteDtos;
 using TasteTracker.Application.Services.Interfaces;
 using TasteTracker.Core.Entities;
 
 namespace TasteTracker.API.Controllers
 {
+    [JwtAuthorize]
     [ApiController]
     [Route("[controller]")]
     public class ClienteController : Controller
@@ -19,11 +22,11 @@ namespace TasteTracker.API.Controllers
         [HttpGet]
         public async Task<IActionResult> FindAll(CancellationToken cancellationToken)
         {
-            var result = await _service.FindAllAsync(null, cancellationToken);
+            var result = await _service.FindAllAsync(new FilterableRequest(), cancellationToken);
             return Ok(result);
         }
 
-        [HttpGet, Route("[id]")]
+        [HttpGet, Route("id")]
         public async Task<IActionResult> FindOne([FromRoute]Guid id,
             CancellationToken cancellationToken)
         {
@@ -31,6 +34,7 @@ namespace TasteTracker.API.Controllers
             return Ok(result);
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Insert([FromBody] CreateClienteDto request,
             CancellationToken cancellationToken)

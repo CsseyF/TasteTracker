@@ -11,6 +11,7 @@ C:\Users\casey\source\repos\TasteTracker.Persistence\obj\Debug\net8.0\TasteTrack
 C:\Users\casey\source\repos\TasteTracker.Persistence\obj\Debug\net8.0\TasteTracker.Persistence.AssemblyInfoInputs.cache
 C:\Users\casey\source\repos\TasteTracker.Persistence\obj\Debug\net8.0\TasteTracker.Persistence.AssemblyInfo.cs
 C:\Users\casey\source\repos\TasteTracker.Persistence\obj\Debug\net8.0\TasteTracker.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\casey\source\repos\TasteTracker.Persistence\obj\Debug\net8.0\TasteTracker.Persistence.sourcelink.json
 C:\Users\casey\source\repos\TasteTracker.Persistence\obj\Debug\net8.0\TasteTracker.Persistence.csproj.CopyComplete
 C:\Users\casey\source\repos\TasteTracker.Persistence\obj\Debug\net8.0\TasteTracker.Persistence.dll
 C:\Users\casey\source\repos\TasteTracker.Persistence\obj\Debug\net8.0\refint\TasteTracker.Persistence.dll

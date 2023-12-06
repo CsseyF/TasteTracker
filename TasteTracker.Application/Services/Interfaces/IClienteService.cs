@@ -11,5 +11,7 @@ namespace TasteTracker.Application.Services.Interfaces
 {
     public interface IClienteService : IService<Cliente, FilterableRequest>
     {
+
+        public Task<Cliente> FindByEmail(string email);
     }
 }

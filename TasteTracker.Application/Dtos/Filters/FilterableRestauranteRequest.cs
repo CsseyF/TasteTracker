@@ -2,7 +2,7 @@
 {
     public class FilterableRestauranteRequest : FilterableRequest
     {
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
     }
 }

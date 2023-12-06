@@ -1,30 +1,33 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TasteTracker.Application.Dtos.ClienteDtos;
+using TasteTracker.Application.Dtos.Filters;
 using TasteTracker.Application.Dtos.RestauranteDtos;
 using TasteTracker.Application.Services.Interfaces;
 using TasteTracker.Core.Entities;
 
 namespace TasteTracker.API.Controllers
 {
+    [JwtAuthorize]
     [ApiController]
     [Route("[controller]")]
-    public class RestauranteController : Controller
+    public class RestaurantesController : Controller
     {
         private readonly IRestauranteService _service;
 
-        public RestauranteController(IRestauranteService service)
+        public RestaurantesController(IRestauranteService service)
         {
             _service = service;
         }
 
         [HttpGet]
-        public async Task<IActionResult> FindAll(CancellationToken cancellationToken)
+        public async Task<IActionResult> FindAll([FromQuery]FilterableRestauranteRequest request, CancellationToken cancellationToken)
         {
-            var result = await _service.FindAllAsync(null, cancellationToken);
+            var result = await _service.FindAllAsync(request, cancellationToken);
             return Ok(result);
         }
 
-        [HttpGet, Route("[id]")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> FindOne([FromRoute] Guid id,
             CancellationToken cancellationToken)
         {
@@ -45,6 +48,7 @@ namespace TasteTracker.API.Controllers
             return Created();
         }
 
+        [HttpPut]
         public async Task<IActionResult> Update([FromBody] UpdateRestauranteDto request,
             CancellationToken cancellationToken)
         {
@@ -56,6 +60,14 @@ namespace TasteTracker.API.Controllers
 
             await _service.UpdateAsync(entity, cancellationToken);
             return Created();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete([FromRoute] Guid id, CancellationToken cancellationToken)
+        {
+            var token = HttpContext.Request.Cookies["jwtToken"];
+            await _service.DeleteAsync(id, token, cancellationToken);
+            return NoContent();
         }
     }
 }

@@ -9,9 +9,13 @@ namespace TasteTracker.Application.Services.Interfaces
         T FindOne(Guid id);
         Task<IEnumerable<T>> FindAllAsync(U filter, CancellationToken cancellationToken);
         IEnumerable<T> FindAll(U filter);
-        Task InsertAsync(T entity, CancellationToken cancellationToken);
+        Task InsertAsync(T entity, CancellationToken cancellationToken, string? jwt);
+        Task InsertAsync(T entity, CancellationToken cancellationTokent);
         void Insert(T entity);
         Task UpdateAsync(T entity, CancellationToken cancellationToken);
+        Task UpdateAsync(T entity, CancellationToken cancellationToken, string jwt);
         void Update(T entity);
+        Task DeleteAsync(Guid id, string jwt, CancellationToken cancellationToken);
+        void Delete(Guid id, string jwt);
     }
 }

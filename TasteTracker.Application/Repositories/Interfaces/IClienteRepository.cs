@@ -10,5 +10,7 @@ namespace TasteTracker.Application.Repositories.Interfaces
 {
     public interface IClienteRepository : IRepository<Cliente, FilterableRequest>
     {
+        public Task<Cliente>? FindByEmail(string email);
+        public bool CheckEmailExistance(string email);
     }
 }

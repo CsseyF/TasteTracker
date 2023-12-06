@@ -5,7 +5,9 @@ C:\Users\casey\source\repos\TasteTracker.Core\obj\Debug\net8.0\TasteTracker.Core
 C:\Users\casey\source\repos\TasteTracker.Core\obj\Debug\net8.0\TasteTracker.Core.AssemblyInfoInputs.cache
 C:\Users\casey\source\repos\TasteTracker.Core\obj\Debug\net8.0\TasteTracker.Core.AssemblyInfo.cs
 C:\Users\casey\source\repos\TasteTracker.Core\obj\Debug\net8.0\TasteTracker.Core.csproj.CoreCompileInputs.cache
+C:\Users\casey\source\repos\TasteTracker.Core\obj\Debug\net8.0\TasteTracker.Core.sourcelink.json
 C:\Users\casey\source\repos\TasteTracker.Core\obj\Debug\net8.0\TasteTracker.Core.dll
 C:\Users\casey\source\repos\TasteTracker.Core\obj\Debug\net8.0\refint\TasteTracker.Core.dll
 C:\Users\casey\source\repos\TasteTracker.Core\obj\Debug\net8.0\TasteTracker.Core.pdb
 C:\Users\casey\source\repos\TasteTracker.Core\obj\Debug\net8.0\ref\TasteTracker.Core.dll
+C:\Users\casey\source\repos\TasteTracker.Core\obj\Debug\net8.0\TasteTracker.Core.csproj.AssemblyReference.cache

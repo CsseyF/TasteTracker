@@ -1,16 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TasteTracker.Application.Dtos;
 using TasteTracker.Application.Repositories.Interfaces;
+using TasteTracker.Core;
 using TasteTracker.Core.Entities.Interfaces;
 
 namespace TasteTracker.Application.Repositories
 {
     public class Repository<T, U> : IRepository<T, U> where T : class, IEntity where U : FilterableRequest
     {
-        private readonly DbContext _dbContext;
+        private readonly TasteTrackerContext _dbContext;
         protected readonly DbSet<T> _dbSet;
 
-        public Repository(DbContext dbContext)
+        public Repository(TasteTrackerContext dbContext)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
             _dbSet = _dbContext.Set<T>();
@@ -86,6 +87,19 @@ namespace TasteTracker.Application.Repositories
         {
             _dbContext.Entry(entity).State = EntityState.Modified;
             _dbContext.SaveChanges();
+        }
+
+        public virtual async Task DeleteAsync(T entity,
+            CancellationToken cancellationToken)
+        {
+            entity.IsActive = false;
+            await UpdateAsync(entity, cancellationToken);
+        }
+
+        public virtual void Delete(T entity)
+        {
+            entity.IsActive = false;
+            Update(entity);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using TasteTracker.Application.Dtos;
+﻿using System.Security.Claims;
+using System.Threading;
+using TasteTracker.Application.Dtos;
 using TasteTracker.Application.Repositories.Interfaces;
 using TasteTracker.Application.Services.Interfaces;
 using TasteTracker.Core.Entities.Interfaces;
@@ -44,6 +46,12 @@ namespace TasteTracker.Application.Services
             await _repository.InsertAsync(entity, cancellationToken);
         }
 
+        public virtual async Task InsertAsync(T entity,
+            CancellationToken cancellationToken, string? jwt)
+        {
+            await _repository.InsertAsync(entity, cancellationToken);
+        }
+
         public virtual void Insert(T entity)
         {
             _repository.Insert(entity);
@@ -55,9 +63,28 @@ namespace TasteTracker.Application.Services
             await _repository.UpdateAsync(entity, cancellationToken);
         }
 
+        public virtual async Task UpdateAsync(T entity,
+            CancellationToken cancellationToken, string jwt)
+        {
+            await _repository.UpdateAsync(entity, cancellationToken);
+        }
+
         public virtual void Update(T entity)
         {
             _repository.Update(entity);
+        }
+
+        public virtual async Task DeleteAsync(Guid id, string jwt, 
+            CancellationToken cancellationToken)
+        {
+            var entity = await _repository.FindOneAsync(id, cancellationToken);
+            await _repository.DeleteAsync(entity, cancellationToken);
+        }
+
+        public virtual void Delete(Guid id, string jwt)
+        {
+            var entity = _repository.FindOne(id);
+            _repository.Delete(entity);
         }
     }
 }

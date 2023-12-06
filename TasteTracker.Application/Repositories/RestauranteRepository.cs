@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TasteTracker.Application.Dtos.Filters;
 using TasteTracker.Application.Repositories.Interfaces;
+using TasteTracker.Core;
 using TasteTracker.Core.Entities;
 
 namespace TasteTracker.Application.Repositories
@@ -8,7 +9,7 @@ namespace TasteTracker.Application.Repositories
     public class RestauranteRepository : Repository<Restaurante, FilterableRestauranteRequest>,
         IRepository<Restaurante, FilterableRestauranteRequest>, IRestauranteRepository
     {
-        public RestauranteRepository(DbContext dbContext) : base(dbContext) { }
+        public RestauranteRepository(TasteTrackerContext dbContext) : base(dbContext) { }
 
         override public async Task<IEnumerable<Restaurante>> FindAllAsync
            (FilterableRestauranteRequest filter, CancellationToken cancellationToken)
@@ -25,7 +26,7 @@ namespace TasteTracker.Application.Repositories
                 query = query.Where(records => records.CreatedAt <= filter.FinalDate);
             }
 
-            if(string.IsNullOrWhiteSpace(filter.Name))
+            if(!string.IsNullOrWhiteSpace(filter.Name))
             {
                 query = query.Where(records => EF.Functions.Like(records.Name, filter.Name));
             }

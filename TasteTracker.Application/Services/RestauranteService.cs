@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using TasteTracker.Application.Dtos.Filters;
@@ -16,9 +17,13 @@ namespace TasteTracker.Application.Services
     public class RestauranteService : Service<Restaurante, FilterableRestauranteRequest>, IRestauranteService
     {
         private readonly IRestauranteRepository _restauranteRepository;
-        public RestauranteService(IRestauranteRepository restauranteRepository) : base(restauranteRepository)
+        private readonly IAuthService _authService;
+        private readonly IClienteService _clienteService;
+        public RestauranteService(IRestauranteRepository restauranteRepository, IAuthService authService, IClienteService clienteService) : base(restauranteRepository)
         {
             _restauranteRepository = restauranteRepository;
+            _authService = authService;
+            _clienteService = clienteService;
         }
 
         public override async Task<Restaurante> FindOneAsync(
@@ -29,7 +34,7 @@ namespace TasteTracker.Application.Services
 
             if(entity is null)
             {
-                throw new NotFoundException();
+                throw new EntityNotFoundException();
             }
 
             return entity;
@@ -65,13 +70,40 @@ namespace TasteTracker.Application.Services
 
             if(oldEntity is null)
             {
-                throw new NotFoundException();
+                throw new EntityNotFoundException();
             }
             
             oldEntity.Name = entity.Name;
 
             await _restauranteRepository
                 .UpdateAsync(oldEntity,cancellationToken);
+        }
+
+        public override async Task DeleteAsync(Guid id, string jwt,
+                CancellationToken cancellationToken)
+        {
+            var claims = _authService.ValidateJwtToken(jwt);
+            var emailClaims = claims.FindFirst(ClaimTypes.Name)?.Value;
+
+            if (string.IsNullOrWhiteSpace(emailClaims))
+            {
+                throw new UnauthorizedAccessException();
+            }
+
+            var cliente = await _clienteService.FindByEmail(emailClaims);
+            var entity = await _restauranteRepository.FindOneAsync(id, cancellationToken);
+
+            if(entity == null)
+            {
+                throw new EntityNotFoundException();
+            }
+
+            if(entity.ClienteId != cliente.Id)
+            {
+                throw new UnauthorizedAccessException();
+            }
+
+            await _restauranteRepository.DeleteAsync(entity, cancellationToken);
         }
     }
 }

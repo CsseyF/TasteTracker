@@ -135,6 +135,7 @@ C:\Users\casey\source\repos\TasteTracker.API\obj\Debug\net8.0\TasteTracker.API.A
 C:\Users\casey\source\repos\TasteTracker.API\obj\Debug\net8.0\TasteTracker.API.csproj.CoreCompileInputs.cache
 C:\Users\casey\source\repos\TasteTracker.API\obj\Debug\net8.0\TasteTracker.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\casey\source\repos\TasteTracker.API\obj\Debug\net8.0\TasteTracker.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\casey\source\repos\TasteTracker.API\obj\Debug\net8.0\TasteTracker.API.sourcelink.json
 C:\Users\casey\source\repos\TasteTracker.API\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\casey\source\repos\TasteTracker.API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\casey\source\repos\TasteTracker.API\obj\Debug\net8.0\staticwebassets\msbuild.TasteTracker.API.Microsoft.AspNetCore.StaticWebAssets.props
@@ -149,3 +150,5 @@ C:\Users\casey\source\repos\TasteTracker.API\obj\Debug\net8.0\refint\TasteTracke
 C:\Users\casey\source\repos\TasteTracker.API\obj\Debug\net8.0\TasteTracker.API.pdb
 C:\Users\casey\source\repos\TasteTracker.API\obj\Debug\net8.0\TasteTracker.API.genruntimeconfig.cache
 C:\Users\casey\source\repos\TasteTracker.API\obj\Debug\net8.0\ref\TasteTracker.API.dll
+C:\Users\casey\source\repos\TasteTracker.API\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\casey\source\repos\TasteTracker.API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
