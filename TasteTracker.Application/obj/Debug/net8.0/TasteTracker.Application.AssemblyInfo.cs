@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TasteTracker.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+12c7b0dff57f0e38ac648d6168290febbd80e49c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8a78dc178337aa46164ebfc12b27b5143ce0f8e")]
 [assembly: System.Reflection.AssemblyProductAttribute("TasteTracker.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TasteTracker.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

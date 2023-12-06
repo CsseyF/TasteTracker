@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using TasteTracker.Application.Services;
@@ -22,6 +23,13 @@ public class JwtAuthorizeFilter : IAuthorizationFilter
     }
     public void OnAuthorization(AuthorizationFilterContext context)
     {
+        var allowAnonymousAttribute = context.ActionDescriptor.EndpointMetadata.OfType<AllowAnonymousAttribute>().FirstOrDefault();
+
+        if (allowAnonymousAttribute != null)
+        {
+            return;
+        }
+
         var token = context.HttpContext.Request.Cookies["jwtToken"];
 
         if (string.IsNullOrEmpty(token))
