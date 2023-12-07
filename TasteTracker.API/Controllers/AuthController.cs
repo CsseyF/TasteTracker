@@ -14,6 +14,11 @@ namespace TasteTracker.API.Controllers
             _authService = authService;
         }
 
+        /// <summary>
+        /// Request para autenticação de usuário
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> LoginAsync([FromBody]LoginDto request)
         {

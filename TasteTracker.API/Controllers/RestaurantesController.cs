@@ -20,6 +20,12 @@ namespace TasteTracker.API.Controllers
             _service = service;
         }
 
+        /// <summary>
+        /// Retorna todos os restaurantes ativos, requisição filtravel por data e nome do restaurante.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> FindAllAsync([FromQuery]FilterableRestauranteRequest request, CancellationToken cancellationToken)
         {
@@ -27,6 +33,12 @@ namespace TasteTracker.API.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Retorna um restaurante especifico com base em seu identificador.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<IActionResult> FindOneAsync([FromRoute] Guid id,
             CancellationToken cancellationToken)
@@ -35,6 +47,12 @@ namespace TasteTracker.API.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Adiciona novo restaurant na base de dados.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> InsertAsync([FromBody] CreateRestauranteDto request,
             CancellationToken cancellationToken)
@@ -48,6 +66,12 @@ namespace TasteTracker.API.Controllers
             return Created();
         }
 
+        /// <summary>
+        /// Edita um restaurante já existente na base de dados(Limitado a quem o criou).
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         [HttpPut]
         public async Task<IActionResult> UpdateAsync([FromBody] UpdateRestauranteDto request,
             CancellationToken cancellationToken)
@@ -62,6 +86,12 @@ namespace TasteTracker.API.Controllers
             return Created();
         }
 
+        /// <summary>
+        /// Desativa um restaurante existente da base da dados (Limitado a quem o criou).
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync([FromRoute] Guid id, CancellationToken cancellationToken)
         {

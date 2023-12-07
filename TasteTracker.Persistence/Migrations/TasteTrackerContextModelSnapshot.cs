@@ -61,7 +61,7 @@ namespace TasteTracker.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cliente", (string)null);
+                    b.ToTable("Cliente");
                 });
 
             modelBuilder.Entity("TasteTracker.Core.Entities.Feedback", b =>
@@ -92,6 +92,9 @@ namespace TasteTracker.Persistence.Migrations
                     b.Property<Guid>("RestauranteId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("TipoFeedback")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
@@ -103,7 +106,7 @@ namespace TasteTracker.Persistence.Migrations
 
                     b.HasIndex("RestauranteId");
 
-                    b.ToTable("Feedback", (string)null);
+                    b.ToTable("Feedback");
                 });
 
             modelBuilder.Entity("TasteTracker.Core.Entities.Restaurante", b =>
@@ -135,7 +138,7 @@ namespace TasteTracker.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Restaurante", (string)null);
+                    b.ToTable("Restaurante");
                 });
 
             modelBuilder.Entity("TasteTracker.Core.Entities.Feedback", b =>

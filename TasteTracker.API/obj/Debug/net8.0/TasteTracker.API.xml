@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TasteTracker.API</name>
+    </assembly>
+    <members>
+        <member name="M:TasteTracker.API.Controllers.AuthController.LoginAsync(TasteTracker.Application.Dtos.AuthDtos.LoginDto)">
+            <summary>
+            Request para autenticação de usuário
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TasteTracker.API.Controllers.ClienteController.FindAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Retorna todos os clientes ativos, requisição filtravel por data e nome de cliente.
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TasteTracker.API.Controllers.ClienteController.FindOneAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Retorna um cliente especifico com base em seu identificador.
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TasteTracker.API.Controllers.ClienteController.InsertAsync(TasteTracker.Application.Dtos.ClienteDtos.CreateClienteDto,System.Threading.CancellationToken)">
+            <summary>
+            Adiciona novo cliente na base de dados.
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TasteTracker.API.Controllers.FeedbacksController.FindAllAsync(TasteTracker.Application.Dtos.Filters.FilterableFeedbackRequest,System.Threading.CancellationToken)">
+            <summary>
+            Retorna todos os feedbacks ativos, requisição filtravel por data e avaliação.
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TasteTracker.API.Controllers.FeedbacksController.FindOneAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Retorna um feedback especifico com base em seu identificador.
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TasteTracker.API.Controllers.FeedbacksController.InsertAsync(TasteTracker.Application.Dtos.FeedbackDtos.CreateFeedbackDto,System.Threading.CancellationToken)">
+            <summary>
+            Adiciona nova avaliação na base de dados.
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TasteTracker.API.Controllers.FeedbacksController.UpdateAsync(TasteTracker.Application.Dtos.FeedbackDtos.UpdateFeedbackDto,System.Threading.CancellationToken)">
+            <summary>
+            Edita uma avaliação já existente na base de dados (Limitado a quem o criou).
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TasteTracker.API.Controllers.FeedbacksController.DeleteAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Desativa uma avaliação existente da base da dados (Limitado a quem o criou).
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TasteTracker.API.Controllers.RestaurantesController.FindAllAsync(TasteTracker.Application.Dtos.Filters.FilterableRestauranteRequest,System.Threading.CancellationToken)">
+            <summary>
+            Retorna todos os restaurantes ativos, requisição filtravel por data e nome do restaurante.
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TasteTracker.API.Controllers.RestaurantesController.FindOneAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Retorna um restaurante especifico com base em seu identificador.
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TasteTracker.API.Controllers.RestaurantesController.InsertAsync(TasteTracker.Application.Dtos.RestauranteDtos.CreateRestauranteDto,System.Threading.CancellationToken)">
+            <summary>
+            Adiciona novo restaurant na base de dados.
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TasteTracker.API.Controllers.RestaurantesController.UpdateAsync(TasteTracker.Application.Dtos.RestauranteDtos.UpdateRestauranteDto,System.Threading.CancellationToken)">
+            <summary>
+            Edita um restaurante já existente na base de dados(Limitado a quem o criou).
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TasteTracker.API.Controllers.RestaurantesController.DeleteAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Desativa um restaurante existente da base da dados (Limitado a quem o criou).
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

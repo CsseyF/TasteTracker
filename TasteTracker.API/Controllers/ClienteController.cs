@@ -19,6 +19,11 @@ namespace TasteTracker.API.Controllers
             _service = service;
         }
 
+        /// <summary>
+        /// Retorna todos os clientes ativos, requisição filtravel por data e nome de cliente.
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> FindAllAsync(CancellationToken cancellationToken)
         {
@@ -26,6 +31,12 @@ namespace TasteTracker.API.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Retorna um cliente especifico com base em seu identificador.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         [HttpGet, Route("id")]
         public async Task<IActionResult> FindOneAsync([FromRoute]Guid id,
             CancellationToken cancellationToken)
@@ -34,6 +45,12 @@ namespace TasteTracker.API.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Adiciona novo cliente na base de dados.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> InsertAsync([FromBody] CreateClienteDto request,

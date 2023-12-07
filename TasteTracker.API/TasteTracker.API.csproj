@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>false</InvariantGlobalization>
+	 <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <UserSecretsId>f9ee7133-083d-4ba0-bb42-bce9d9ab8130</UserSecretsId>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>

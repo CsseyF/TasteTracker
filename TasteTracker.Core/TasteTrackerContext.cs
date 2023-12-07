@@ -63,6 +63,7 @@ namespace TasteTracker.Core
             modelBuilder.Entity<Feedback>()
                 .Property(x => x.UpdatedAt)
                 .HasDefaultValueSql("getdate()");
+
         }
     }
 }

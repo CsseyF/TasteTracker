@@ -18,3 +18,4 @@ C:\Users\casey\source\repos\TasteTracker.Persistence\obj\Debug\net8.0\refint\Tas
 C:\Users\casey\source\repos\TasteTracker.Persistence\obj\Debug\net8.0\TasteTracker.Persistence.pdb
 C:\Users\casey\source\repos\TasteTracker.Persistence\obj\Debug\net8.0\TasteTracker.Persistence.genruntimeconfig.cache
 C:\Users\casey\source\repos\TasteTracker.Persistence\obj\Debug\net8.0\ref\TasteTracker.Persistence.dll
+C:\Users\casey\source\repos\TasteTracker.Persistence\bin\Debug\net8.0\TasteTracker.Application.xml

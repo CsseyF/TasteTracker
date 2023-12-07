@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
 using System.Text;
 using TasteTracker.Persistence;
 
@@ -27,6 +29,16 @@ builder.Services.AddAuthentication(options =>
         ValidAudience = "tasteTrackerJwt",
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("qxa14{e$@./,]cl6{p(r>s`|,<}h4b_:6j4"))
     };
+});
+
+builder.Services.AddSwaggerGen(opt =>
+{
+    opt.SwaggerDoc("v1", new OpenApiInfo { Title = "TodoAPI", Version = "v1" });
+
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+
+    opt.IncludeXmlComments(xmlPath);
 });
 
 

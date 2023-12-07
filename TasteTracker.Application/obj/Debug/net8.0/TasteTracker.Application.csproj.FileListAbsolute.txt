@@ -14,3 +14,5 @@ C:\Users\casey\source\repos\TasteTracker.Application\obj\Debug\net8.0\TasteTrack
 C:\Users\casey\source\repos\TasteTracker.Application\obj\Debug\net8.0\refint\TasteTracker.Application.dll
 C:\Users\casey\source\repos\TasteTracker.Application\obj\Debug\net8.0\TasteTracker.Application.pdb
 C:\Users\casey\source\repos\TasteTracker.Application\obj\Debug\net8.0\ref\TasteTracker.Application.dll
+C:\Users\casey\source\repos\TasteTracker.Application\bin\Debug\net8.0\TasteTracker.Application.xml
+C:\Users\casey\source\repos\TasteTracker.Application\obj\Debug\net8.0\TasteTracker.Application.xml

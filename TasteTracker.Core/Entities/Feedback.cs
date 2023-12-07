@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using TasteTracker.Core.Entities.Interfaces;
+using TasteTracker.Core.Enums;
 
 namespace TasteTracker.Core.Entities
 {
@@ -12,6 +13,7 @@ namespace TasteTracker.Core.Entities
         public Cliente? Cliente { get; set; }
         public Guid ClienteId { get; set; }
         public string? Comment { get; set; }
+        public TipoFeedback TipoFeedback { get; set; }
         public int Rating { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
