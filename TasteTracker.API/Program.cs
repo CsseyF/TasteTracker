@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using TasteTracker.Persistence;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
@@ -29,7 +30,7 @@ builder.Services.AddAuthentication(options =>
 });
 
 
-Builder.DbContextBuilder(builder.Services);
+Builder.DbContextBuilder(builder.Services, builder);
 Builder.RepositoryBuilder(builder.Services);
 Builder.ServiceBuilder(builder.Services);
 

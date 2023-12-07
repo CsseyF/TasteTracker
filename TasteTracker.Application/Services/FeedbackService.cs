@@ -48,7 +48,7 @@ namespace TasteTracker.Application.Services
                     throw new UnauthorizedAccessException();
                 }
 
-                var cliente = await _clienteService.FindByEmail(emailClaims);
+                var cliente = await _clienteService.FindByEmailAsync(emailClaims);
 
                 entity.ClienteId = cliente.Id;
 
@@ -78,7 +78,7 @@ namespace TasteTracker.Application.Services
                 throw new UnauthorizedAccessException();
             }
 
-            var cliente = await _clienteService.FindByEmail(emailClaims);
+            var cliente = await _clienteService.FindByEmailAsync(emailClaims);
             var oldEntity = await _repository.FindOneAsync(entity.Id, cancellationToken);
 
             if (oldEntity.ClienteId != cliente.Id)
@@ -103,7 +103,7 @@ namespace TasteTracker.Application.Services
                 throw new UnauthorizedAccessException();
             }
 
-            var cliente = await _clienteService.FindByEmail(emailClaims);
+            var cliente = await _clienteService.FindByEmailAsync(emailClaims);
             var entity = await _repository.FindOneAsync(id, cancellationToken);
 
 

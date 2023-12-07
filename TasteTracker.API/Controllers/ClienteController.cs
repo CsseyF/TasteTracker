@@ -20,14 +20,14 @@ namespace TasteTracker.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> FindAll(CancellationToken cancellationToken)
+        public async Task<IActionResult> FindAllAsync(CancellationToken cancellationToken)
         {
             var result = await _service.FindAllAsync(new FilterableRequest(), cancellationToken);
             return Ok(result);
         }
 
         [HttpGet, Route("id")]
-        public async Task<IActionResult> FindOne([FromRoute]Guid id,
+        public async Task<IActionResult> FindOneAsync([FromRoute]Guid id,
             CancellationToken cancellationToken)
         {
             var result = await _service.FindOneAsync(id, cancellationToken);
@@ -36,7 +36,7 @@ namespace TasteTracker.API.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> Insert([FromBody] CreateClienteDto request,
+        public async Task<IActionResult> InsertAsync([FromBody] CreateClienteDto request,
             CancellationToken cancellationToken)
         {
             Cliente entity = new()

@@ -21,14 +21,14 @@ namespace TasteTracker.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> FindAll([FromQuery]FilterableRestauranteRequest request, CancellationToken cancellationToken)
+        public async Task<IActionResult> FindAllAsync([FromQuery]FilterableRestauranteRequest request, CancellationToken cancellationToken)
         {
             var result = await _service.FindAllAsync(request, cancellationToken);
             return Ok(result);
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> FindOne([FromRoute] Guid id,
+        public async Task<IActionResult> FindOneAsync([FromRoute] Guid id,
             CancellationToken cancellationToken)
         {
             var result = await _service.FindOneAsync(id, cancellationToken);
@@ -36,7 +36,7 @@ namespace TasteTracker.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Insert([FromBody] CreateRestauranteDto request,
+        public async Task<IActionResult> InsertAsync([FromBody] CreateRestauranteDto request,
             CancellationToken cancellationToken)
         {
             Restaurante entity = new()
@@ -49,7 +49,7 @@ namespace TasteTracker.API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update([FromBody] UpdateRestauranteDto request,
+        public async Task<IActionResult> UpdateAsync([FromBody] UpdateRestauranteDto request,
             CancellationToken cancellationToken)
         {
             Restaurante entity = new()
@@ -63,7 +63,7 @@ namespace TasteTracker.API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromRoute] Guid id, CancellationToken cancellationToken)
+        public async Task<IActionResult> DeleteAsync([FromRoute] Guid id, CancellationToken cancellationToken)
         {
             var token = HttpContext.Request.Cookies["jwtToken"];
             await _service.DeleteAsync(id, token, cancellationToken);

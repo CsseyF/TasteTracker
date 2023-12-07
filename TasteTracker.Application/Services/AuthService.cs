@@ -23,12 +23,12 @@ namespace TasteTracker.Application.Services
             _hashingService = hashingService;
 
         }
-        public async Task<string> GenerateJwtToken(LoginDto request)
+        public async Task<string> GenerateJwtTokenAsync(LoginDto request)
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:SecretKey"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var entity = await _clienteService.FindByEmail(request.Email);
+            var entity = await _clienteService.FindByEmailAsync(request.Email);
             var hashedPassword = _hashingService.Hashpassword(request.Password);
 
             if(entity.Password != hashedPassword)

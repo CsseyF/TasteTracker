@@ -90,7 +90,7 @@ namespace TasteTracker.Application.Services
                 throw new UnauthorizedAccessException();
             }
 
-            var cliente = await _clienteService.FindByEmail(emailClaims);
+            var cliente = await _clienteService.FindByEmailAsync(emailClaims);
             var entity = await _restauranteRepository.FindOneAsync(id, cancellationToken);
 
             if(entity == null)

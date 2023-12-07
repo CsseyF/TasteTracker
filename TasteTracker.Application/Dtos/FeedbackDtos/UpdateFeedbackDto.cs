@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TasteTracker.Application.Dtos.FeedbackDtos
+﻿namespace TasteTracker.Application.Dtos.FeedbackDtos
 {
     public class UpdateFeedbackDto
     {

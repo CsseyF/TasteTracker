@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TasteTracker.Application.Services.Interfaces;
+﻿using TasteTracker.Application.Services.Interfaces;
 
 namespace TasteTracker.Application.Services
 {

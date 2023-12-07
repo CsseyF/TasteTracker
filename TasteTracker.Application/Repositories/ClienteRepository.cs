@@ -12,10 +12,9 @@ namespace TasteTracker.Application.Repositories
 
         public ClienteRepository(TasteTrackerContext dbContext) : base(dbContext) { }
 
-        public async Task<Cliente>? FindByEmail(string email)
+        public async Task<Cliente>? FindByEmailAsync(string email)
         {
-            var result = _dbSet.FirstOrDefault(record => record.Email == email);
-            return result;
+            return await _dbSet.FirstOrDefaultAsync(record => record.Email == email);
         }
 
         public bool CheckEmailExistance(string email)

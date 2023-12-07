@@ -15,9 +15,9 @@ namespace TasteTracker.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login([FromBody]LoginDto request)
+        public async Task<IActionResult> LoginAsync([FromBody]LoginDto request)
         {
-            var jwt = await _authService.GenerateJwtToken(request);
+            var jwt = await _authService.GenerateJwtTokenAsync(request);
 
             var options = new CookieOptions
             {

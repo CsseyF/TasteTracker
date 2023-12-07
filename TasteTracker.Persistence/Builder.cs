@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TasteTracker.Application.Repositories;
 using TasteTracker.Application.Repositories.Interfaces;
@@ -10,10 +12,10 @@ namespace TasteTracker.Persistence
 {
     public class Builder
     {
-        public static void DbContextBuilder(IServiceCollection services)
+        public static void DbContextBuilder(IServiceCollection services, WebApplicationBuilder builder)
         {
             services.AddDbContext<TasteTrackerContext>(options =>
-                options.UseSqlServer("Server=localhost,1433;Database=TasteTrackerDb;User=sa;Password=tasteTracker2929;TrustServerCertificate=True",
+                options.UseSqlServer(builder.Configuration.GetConnectionString("TasteTrackerConnection"),
                 b => b.MigrationsAssembly("TasteTracker.Persistence")));
         }
 

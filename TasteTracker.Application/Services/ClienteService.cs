@@ -37,9 +37,9 @@ namespace TasteTracker.Application.Services
             }
         }
 
-        public async Task<Cliente> FindByEmail(string email)
+        public async Task<Cliente> FindByEmailAsync(string email)
         {
-            var result = await _repository.FindByEmail(email);
+            var result = await _repository.FindByEmailAsync(email);
             if(result == null)
             {
                 throw new EntityNotFoundException();
